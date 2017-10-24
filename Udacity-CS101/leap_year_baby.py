@@ -1,5 +1,3 @@
-# By Ashwath from forums
-
 # A leap year baby is a baby born on Feb 29, which occurs only on a leap year.
 
 # Define a procedure is_leap_baby that takes 3 inputs: day, month and year
@@ -10,16 +8,16 @@
 # divisible by 100 but not a multiple of 400 (so, 1900 is not a leap
 # year but 2000 and 2004 are).
 
-def ISleapyear(year):
+def isLeapYear(year):
     result = False
-    if(year % 4 == 0 and year % 100 != 0):
+    if year % 4 == 0 and year % 100 != 0:
         result = True
-    if(year % 400 == 0):
+    if year % 400 == 0:
         result = True
-    return(result)
+    return result
 
 def is_leap_baby(day,month,year):
-    if(ISleapyear(year) and month == 2 and day == 29):
+    if isLeapYear(year) and month == 2 and day == 29:
         return True
     else:
         return False
@@ -37,16 +35,16 @@ def output(status,name):
 # Test Cases
 
 output(is_leap_baby(29, 2, 1996), 'Calvin')
-#>>>Calvin is one of an extremely rare species. He is a leap year baby!
+# >>>Calvin is one of an extremely rare species. He is a leap year baby!
 
 output(is_leap_baby(19, 6, 1978), 'Garfield')
-#>>>There's nothing special about Garfield's birthday. He is not a leap year baby!
+# >>>There's nothing special about Garfield's birthday. He is not a leap year baby!
 
 output(is_leap_baby(29, 2, 2000), 'Hobbes')
-#>>>Hobbes is one of an extremely rare species. He is a leap year baby!
+# >>>Hobbes is one of an extremely rare species. He is a leap year baby!
 
 output(is_leap_baby(29, 2, 1900), 'Charlie Brown')
-#>>>There's nothing special about Charlie Brown's birthday. He is not a leap year baby!
+# >>>There's nothing special about Charlie Brown's birthday. He is not a leap year baby!
 
 output(is_leap_baby(28, 2, 1976), 'Odie')
-#>>>There's nothing special about Odie's birthday. He is not a leap year baby!
+# >>>There's nothing special about Odie's birthday. He is not a leap year baby!

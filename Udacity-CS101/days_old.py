@@ -20,27 +20,27 @@ daysofMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
 def isLeapYear(year):
     result = False
-    if(year % 4 == 0 and year % 100 != 0):
+    if year % 4 == 0 and year % 100 != 0:
         result = True
-    if(year % 400 == 0):
+    if year % 400 == 0:
         result = True
-    return(result)
+    return result
 
 def daysInMonths(month, year):
     x = 0
     mon = 0
     for mon in range(0, month - 1):
         x += daysofMonths[mon]
-        if(mon == 1 and isLeapYear(year)):
+        if mon == 1 and isLeapYear(year):
             x += 1
     return x
 
 def daysBetweenDates(year1, month1, day1, year2, month2, day2):
     result = (year2 - year1) * 365 + daysInMonths(month2, year2) - daysInMonths(month1, year1) + day2 - day1
     for year in range(year1 + 1, year2):
-        if(isLeapYear(year)):
+        if isLeapYear(year):
             result += 1
-    return(result)
+    return result
 
 
 # Test routine
