@@ -16,8 +16,8 @@ Step 3: Click the tap `New` on the top right corner to create a new notebook. Ty
 
 The notebook files (.pynb) with numbers are ordered introductory materials for Python beginners. It is recommended that one should start with `0-Notebook.ipynb` followed by `1-python-basics.ipynb` and so on. For those who have previous experience with Python, you can start wherever of your interest.
 
-The `Udacity-CS101` folder contains nontrivial solutions for problems in the MOOC [Introduction to Computer Science](https://www.udacity.com/course/intro-to-computer-science--cs101). This course is a good starter point for people with no or little previous coding experience. It is taught all in Python.
+The __Udacity-CS101__ folder contains nontrivial solutions for problems in the MOOC [Introduction to Computer Science](https://www.udacity.com/course/intro-to-computer-science--cs101). This course is a good starter point for people with no or little previous coding experience. It is taught all in Python.
 
-The `Machine-Learning` folder contains the classical machine learning examples realized in Python language.
+The __Machine-Learning__ folder contains the classical machine learning examples realized in Python language.
 
 I will add more contents in the future depends on needs and mood.
