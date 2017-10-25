@@ -1,3 +1,6 @@
+# changed accordingly to Lesson 15. functions 'crawl_web1' and
+# 'crawl_web2' return list 'index' instead of list 'crawled'.
+
 #
 # This question explores a different way (from the previous question)
 # to limit the pages that it can crawl.
@@ -111,28 +114,54 @@ def get_all_links(page):
 def crawl_web1(seed, max_pages):
     tocrawl = [seed]
     crawled = []
+    index = []
     while tocrawl:
         page = tocrawl.pop()
         if page not in crawled and len(crawled) <= max_pages:
-            union(tocrawl, get_all_links(get_page(page)))
+            content = get_page(page)
+            add_page_to_index(index, page, content)
+            union(tocrawl, get_all_links(content))
             crawled.append(page)
-    return crawled
+    return index
 
 # crawl_web2: max depth limit
 def crawl_web2(seed, max_depths):
     tocrawl = [seed]
     crawled = []
+    index = []
     next_depth = []
     depth = 0
     while tocrawl:
         page = tocrawl.pop()
         if page not in crawled and depth <= max_depths:
-            union(next_depth, get_all_links(get_page(page)))
+            content = get_page(page)
+            add_page_to_index(index, page, content)
+            union(next_depth, get_all_links(content))
             crawled.append(page)
         if not tocrawl:
             tocrawl, next_depth = next_depth, []
             depth += 1
-    return crawled
+    return index
+
+
+def add_to_index(index, keyword, url):
+    for entry in index:
+        if entry[0] == keyword:
+            entry[1].append(url)
+            return
+    index.append([keyword, [url]])
+
+def lookup(index, keyword):
+    for entry in index:
+        if entry[0] == keyword:
+            return entry[1]
+    return []
+
+def add_page_to_index(index, url, content):
+    words = content.split()
+    for word in words:
+        add_to_index(index, word, url)
+
 
 
 
