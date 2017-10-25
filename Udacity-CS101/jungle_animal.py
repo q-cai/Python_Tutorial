@@ -14,6 +14,7 @@
 # an animal and your speed (in km/h),
 # and prints out what to do.
 
+
 def jungle_animal(animal, my_speed):
     if animal == 'zebra':
         print('Try to ride a zebra!')

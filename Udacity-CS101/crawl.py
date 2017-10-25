@@ -37,40 +37,40 @@ def get_page(url):
     try:
         if url == "http://www.udacity.com/cs101x/index.html":
             return ('<html> <body> This is a test page for learning to crawl! '
-            '<p> It is a good idea to '
-            '<a href="http://www.udacity.com/cs101x/crawling.html">learn to '
-            'crawl</a> before you try to  '
-            '<a href="http://www.udacity.com/cs101x/walking.html">walk</a> '
-            'or  <a href="http://www.udacity.com/cs101x/flying.html">fly</a>. '
-            '</p> </body> </html> ')
+                    '<p> It is a good idea to '
+                    '<a href="http://www.udacity.com/cs101x/crawling.html">learn to '
+                    'crawl</a> before you try to  '
+                    '<a href="http://www.udacity.com/cs101x/walking.html">walk</a> '
+                    'or  <a href="http://www.udacity.com/cs101x/flying.html">fly</a>. '
+                    '</p> </body> </html> ')
         elif url == "http://www.udacity.com/cs101x/crawling.html":
             return ('<html> <body> I have not learned to crawl yet, but I '
-            'am quite good at '
-            '<a href="http://www.udacity.com/cs101x/kicking.html">kicking</a>.'
-            '</body> </html>')
+                    'am quite good at '
+                    '<a href="http://www.udacity.com/cs101x/kicking.html">kicking</a>.'
+                    '</body> </html>')
         elif url == "http://www.udacity.com/cs101x/walking.html":
             return ('<html> <body> I cant get enough '
-            '<a href="http://www.udacity.com/cs101x/index.html">crawling</a>! '
-            '</body> </html>')
+                    '<a href="http://www.udacity.com/cs101x/index.html">crawling</a>! '
+                    '</body> </html>')
         elif url == "http://www.udacity.com/cs101x/flying.html":
             return ('<html> <body> The magic words are Squeamish Ossifrage! '
-            '</body> </html>')
+                    '</body> </html>')
         elif url == "http://top.contributors/velak.html":
             return ('<a href="http://top.contributors/jesyspa.html">'
-        '<a href="http://top.contributors/forbiddenvoid.html">')
+                    '<a href="http://top.contributors/forbiddenvoid.html">')
         elif url == "http://top.contributors/jesyspa.html":
             return ('<a href="http://top.contributors/elssar.html">'
-        '<a href="http://top.contributors/kilaws.html">')
+                    '<a href="http://top.contributors/kilaws.html">')
         elif url == "http://top.contributors/forbiddenvoid.html":
             return ('<a href="http://top.contributors/charlzz.html">'
-        '<a href="http://top.contributors/johang.html">'
-        '<a href="http://top.contributors/graemeblake.html">')
+                    '<a href="http://top.contributors/johang.html">'
+                    '<a href="http://top.contributors/graemeblake.html">')
         elif url == "http://top.contributors/kilaws.html":
             return ('<a href="http://top.contributors/tomvandenbosch.html">'
-        '<a href="http://top.contributors/mathprof.html">')
+                    '<a href="http://top.contributors/mathprof.html">')
         elif url == "http://top.contributors/graemeblake.html":
             return ('<a href="http://top.contributors/dreyescat.html">'
-        '<a href="http://top.contributors/angel.html">')
+                    '<a href="http://top.contributors/angel.html">')
         elif url == "A1":
             return '<a href="B1"> <a href="C1">  '
         elif url == "B1":
@@ -85,6 +85,7 @@ def get_page(url):
         return ""
     return ""
 
+
 def get_next_target(page):
     start_link = page.find('<a href=')
     if start_link == -1:
@@ -94,15 +95,17 @@ def get_next_target(page):
     url = page[start_quote + 1:end_quote]
     return url, end_quote
 
-def union(p,q):
+
+def union(p, q):
     for e in q:
         if e not in p:
             p.append(e)
 
+
 def get_all_links(page):
     links = []
     while True:
-        url,endpos = get_next_target(page)
+        url, endpos = get_next_target(page)
         if url:
             links.append(url)
             page = page[endpos:]
@@ -111,6 +114,8 @@ def get_all_links(page):
     return links
 
 # crawl_web1: max pages limit
+
+
 def crawl_web1(seed, max_pages):
     tocrawl = [seed]
     crawled = []
@@ -125,6 +130,8 @@ def crawl_web1(seed, max_pages):
     return index
 
 # crawl_web2: max depth limit
+
+
 def crawl_web2(seed, max_depths):
     tocrawl = [seed]
     crawled = []
@@ -151,11 +158,13 @@ def add_to_index(index, keyword, url):
             return
     index.append([keyword, [url]])
 
+
 def lookup(index, keyword):
     for entry in index:
         if entry[0] == keyword:
             return entry[1]
     return []
+
 
 def add_page_to_index(index, url, content):
     words = content.split()
@@ -163,19 +172,17 @@ def add_page_to_index(index, url, content):
         add_to_index(index, word, url)
 
 
-
-
 # test cases
 
-print(crawl_web1("http://www.udacity.com/cs101x/index.html",1))
+print(crawl_web1("http://www.udacity.com/cs101x/index.html", 1))
 # >>> ['http://www.udacity.com/cs101x/index.html']
 
-print(crawl_web1("http://www.udacity.com/cs101x/index.html",3))
+print(crawl_web1("http://www.udacity.com/cs101x/index.html", 3))
 # >>> ['http://www.udacity.com/cs101x/index.html',
 # >>> 'http://www.udacity.com/cs101x/flying.html',
 # >>> 'http://www.udacity.com/cs101x/walking.html']
 
-print(crawl_web1("http://www.udacity.com/cs101x/index.html",500))
+print(crawl_web1("http://www.udacity.com/cs101x/index.html", 500))
 # >>> ['http://www.udacity.com/cs101x/index.html',
 # >>> 'http://www.udacity.com/cs101x/flying.html',
 # >>> 'http://www.udacity.com/cs101x/walking.html',
@@ -183,24 +190,23 @@ print(crawl_web1("http://www.udacity.com/cs101x/index.html",500))
 # >>> 'http://www.udacity.com/cs101x/kicking.html']
 
 
-
-print(crawl_web2("http://www.udacity.com/cs101x/index.html",0))
+print(crawl_web2("http://www.udacity.com/cs101x/index.html", 0))
 # >>> ['http://www.udacity.com/cs101x/index.html']
 
-print(crawl_web2("http://www.udacity.com/cs101x/index.html",1))
+print(crawl_web2("http://www.udacity.com/cs101x/index.html", 1))
 # >>> ['http://www.udacity.com/cs101x/index.html',
 # >>> 'http://www.udacity.com/cs101x/flying.html',
 # >>> 'http://www.udacity.com/cs101x/walking.html',
 # >>> 'http://www.udacity.com/cs101x/crawling.html']
 
-print(crawl_web2("http://www.udacity.com/cs101x/index.html",50))
+print(crawl_web2("http://www.udacity.com/cs101x/index.html", 50))
 # >>> ['http://www.udacity.com/cs101x/index.html',
 # >>> 'http://www.udacity.com/cs101x/flying.html',
 # >>> 'http://www.udacity.com/cs101x/walking.html',
 # >>> 'http://www.udacity.com/cs101x/crawling.html',
 # >>> 'http://www.udacity.com/cs101x/kicking.html']
 
-print(crawl_web2("http://top.contributors/forbiddenvoid.html",2))
+print(crawl_web2("http://top.contributors/forbiddenvoid.html", 2))
 # >>> ['http://top.contributors/forbiddenvoid.html',
 # >>> 'http://top.contributors/graemeblake.html',
 # >>> 'http://top.contributors/angel.html',
@@ -208,5 +214,5 @@ print(crawl_web2("http://top.contributors/forbiddenvoid.html",2))
 # >>> 'http://top.contributors/johang.html',
 # >>> 'http://top.contributors/charlzz.html']
 
-print(crawl_web2("A1",3))
+print(crawl_web2("A1", 3))
 # >>> ['A1', 'C1', 'B1', 'E1', 'D1', 'F1']

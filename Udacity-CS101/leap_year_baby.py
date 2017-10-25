@@ -8,6 +8,7 @@
 # divisible by 100 but not a multiple of 400 (so, 1900 is not a leap
 # year but 2000 and 2004 are).
 
+
 def isLeapYear(year):
     result = False
     if year % 4 == 0 and year % 100 != 0:
@@ -16,7 +17,8 @@ def isLeapYear(year):
         result = True
     return result
 
-def is_leap_baby(day,month,year):
+
+def is_leap_baby(day, month, year):
     if isLeapYear(year) and month == 2 and day == 29:
         return True
     else:
@@ -26,13 +28,14 @@ def is_leap_baby(day,month,year):
 # The function 'output' prints one of two statements based on whether
 # the is_leap_baby function returned True or False.
 
-def output(status,name):
+def output(status, name):
     if status:
         print("%s is one of an extremely rare species. He is a leap year baby!" % name)
     else:
         print("There's nothing special about %s's birthday. He is not a leap year baby!" % name)
 
 # Test Cases
+
 
 output(is_leap_baby(29, 2, 1996), 'Calvin')
 # >>>Calvin is one of an extremely rare species. He is a leap year baby!

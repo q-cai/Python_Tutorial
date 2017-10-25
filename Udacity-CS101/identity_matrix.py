@@ -9,6 +9,7 @@
 # (A square matrix is a matrix in which the number of rows
 # is equal to the number of columns)
 
+
 def is_identity_matrix(matrix):
     n = len(matrix)
     for i in range(n):
@@ -22,46 +23,45 @@ def is_identity_matrix(matrix):
     return True
 
 
-
 # Test cases:
 
-matrix1 = [[1,0,0,0],
-           [0,1,0,0],
-           [0,0,1,0],
-           [0,0,0,1]]
+matrix1 = [[1, 0, 0, 0],
+           [0, 1, 0, 0],
+           [0, 0, 1, 0],
+           [0, 0, 0, 1]]
 print(is_identity_matrix(matrix1))
 # >>>True
 
-matrix2 = [[1,0,0],
-           [0,1,0],
-           [0,0,0]]
+matrix2 = [[1, 0, 0],
+           [0, 1, 0],
+           [0, 0, 0]]
 
 print(is_identity_matrix(matrix2))
 # >>>False
 
-matrix3 = [[2,0,0],
-           [0,2,0],
-           [0,0,2]]
+matrix3 = [[2, 0, 0],
+           [0, 2, 0],
+           [0, 0, 2]]
 
 print(is_identity_matrix(matrix3))
 # >>>False
 
-matrix4 = [[1,0,0,0],
-           [0,1,1,0],
-           [0,0,0,1]]
+matrix4 = [[1, 0, 0, 0],
+           [0, 1, 1, 0],
+           [0, 0, 0, 1]]
 
 print(is_identity_matrix(matrix4))
 # >>>False
 
-matrix5 = [[1,0,0,0,0,0,0,0,0]]
+matrix5 = [[1, 0, 0, 0, 0, 0, 0, 0, 0]]
 
 print(is_identity_matrix(matrix5))
 # >>>False
 
-matrix6 = [[1,0,0,0],
-           [0,1,0,1],
-           [0,0,1,0],
-           [0,0,0,1]]
+matrix6 = [[1, 0, 0, 0],
+           [0, 1, 0, 1],
+           [0, 0, 1, 0],
+           [0, 0, 0, 1]]
 
 print(is_identity_matrix(matrix6))
 # >>>False

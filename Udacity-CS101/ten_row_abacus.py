@@ -39,18 +39,20 @@
 # 3 STARS: 3 < lines <= 6
 # 4 STARS: 0 < lines <= 3
 
+
 def print_abacus(value):
-	st = ['|00000*****   |'] * 10
-	i = 0
-	while value > 0:
-		st[9 - i] = st[9 - i][:(11 - (value % 10))] + '   ' + st[9 - i][(11 - (value % 10)):11] + '|'
-		value //= 10
-		i += 1
-	for ste in st:
-		print(ste)
+    st = ['|00000*****   |'] * 10
+    i = 0
+    while value > 0:
+        st[9 - i] = st[9 - i][:(11 - (value % 10))] + '   ' + \
+            st[9 - i][(11 - (value % 10)):11] + '|'
+        value //= 10
+        i += 1
+    for ste in st:
+        print(ste)
 
 
-###  TEST CASES
+# TEST CASES
 print("Abacus showing 0:")
 print_abacus(0)
 # >>>|00000*****   |

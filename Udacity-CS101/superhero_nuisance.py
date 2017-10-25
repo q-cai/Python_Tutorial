@@ -16,18 +16,19 @@
 # don't need to keep track of repeat usage).
 
 # NOTE: # If you are experiencing difficulties taking
-        # this problem seriously, please refer back to
-        # "Superhero flyby", the prequel, in Problem Set 11.
+# this problem seriously, please refer back to
+# "Superhero flyby", the prequel, in Problem Set 11.
 
 # TOOLS: # if statement
-         # while loop
-         # string operations
-         # Unit 1 Basics
+# while loop
+# string operations
+# Unit 1 Basics
 
 # BONUS: #
 # 5***** #  If you've graduated from CS101,
 #  Gold  #  try solving this in one line.
 # Stars! #
+
 
 def fix_machine(debris, product):
     ### WRITE YOUR CODE HERE ###
@@ -41,8 +42,10 @@ def fix_machine(debris, product):
             return "Give me something that's not useless next time."
     return product
 
+
 ### TEST CASES ###
-print("Test case 1: ", fix_machine('UdaciousUdacitee', 'Udacity') == "Give me something that's not useless next time.")
+print("Test case 1: ", fix_machine('UdaciousUdacitee', 'Udacity')
+      == "Give me something that's not useless next time.")
 print("Test case 2: ", fix_machine('buy me dat Unicorn', 'Udacity') == 'Udacity')
 print("Test case 3: ", fix_machine('AEIOU and sometimes y... c', 'Udacity') == 'Udacity')
 print("Test case 4: ", fix_machine('wsx0-=mttrhix', 't-shirt') == 't-shirt')

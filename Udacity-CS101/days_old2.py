@@ -7,6 +7,7 @@
 
 daysofMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
+
 def isLeapYear(year):
     result = False
     if year % 4 == 0 and year % 100 != 0:
@@ -15,11 +16,13 @@ def isLeapYear(year):
         result = True
     return result
 
+
 def daysInMonths(month, year):
     if isLeapYear(year) and month == 2:
         return 29
     else:
         return daysofMonths[month - 1]
+
 
 def nextDay(year, month, day):
     if day < daysInMonths(month, year):
@@ -29,6 +32,7 @@ def nextDay(year, month, day):
             return year + 1, 1, 1
         else:
             return year, month + 1, 1
+
 
 def dateIsBefore(year1, month1, day1, year2, month2, day2):
     """Returns True if year1-month1-day1 is before year2-month2-day2. Otherwise, returns False."""
@@ -40,6 +44,7 @@ def dateIsBefore(year1, month1, day1, year2, month2, day2):
         if month1 == month2:
             return day1 < day2
     return False
+
 
 def daysBetweenDates(year1, month1, day1, year2, month2, day2):
     """Returns the number of days between year1/month1/day1
@@ -55,6 +60,7 @@ def daysBetweenDates(year1, month1, day1, year2, month2, day2):
         days += 1
     return days
 
+
 def test():
     assert daysBetweenDates(2013, 1, 1, 2013, 1, 1) == 0
     assert daysBetweenDates(2013, 1, 1, 2013, 1, 2) == 1
@@ -67,5 +73,6 @@ def test():
     assert nextDay(2013, 12, 31) == (2014, 1, 1)
     assert nextDay(2001, 2, 28) == (2001, 3, 1)
     print('tese finished.')
+
 
 test()

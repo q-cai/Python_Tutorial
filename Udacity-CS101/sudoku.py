@@ -28,29 +28,29 @@
 # You may assume the the input is square and contains at
 # least one row and column.
 
-correct = [[1,2,3],
-           [2,3,1],
-           [3,1,2]]
+correct = [[1, 2, 3],
+           [2, 3, 1],
+           [3, 1, 2]]
 
-incorrect = [[1,2,3,4],
-             [2,3,1,3],
-             [3,1,2,3],
-             [4,4,4,4]]
+incorrect = [[1, 2, 3, 4],
+             [2, 3, 1, 3],
+             [3, 1, 2, 3],
+             [4, 4, 4, 4]]
 
-incorrect2 = [[1,2,3,4],
-             [2,3,1,4],
-             [4,1,2,3],
-             [3,4,1,2]]
+incorrect2 = [[1, 2, 3, 4],
+              [2, 3, 1, 4],
+              [4, 1, 2, 3],
+              [3, 4, 1, 2]]
 
-incorrect3 = [[1,2,3,4,5],
-              [2,3,1,5,6],
-              [4,5,2,1,3],
-              [3,4,5,2,1],
-              [5,6,4,3,2]]
+incorrect3 = [[1, 2, 3, 4, 5],
+              [2, 3, 1, 5, 6],
+              [4, 5, 2, 1, 3],
+              [3, 4, 5, 2, 1],
+              [5, 6, 4, 3, 2]]
 
-incorrect4 = [['a','b','c'],
-              ['b','c','a'],
-              ['c','a','b']]
+incorrect4 = [['a', 'b', 'c'],
+              ['b', 'c', 'a'],
+              ['c', 'a', 'b']]
 
 incorrect5 = [[1, 1.5],
               [1.5, 1]]
@@ -58,14 +58,15 @@ incorrect5 = [[1, 1.5],
 # Idea: every number from 1 to p appears in each row and each column exactly once
 # iterate row and col, check occurance
 
+
 def check_sudoku(p):
-    for digit in range(1, len(p) + 1): # digits to check: 1,2,...,p
-        for i in range(len(p)): # go through each row
+    for digit in range(1, len(p) + 1):  # digits to check: 1,2,...,p
+        for i in range(len(p)):  # go through each row
             row_count, col_count = 0, 0
-            for j in range(len(p)): # go through each col
-                if p[i][j] == digit: # row digit match
+            for j in range(len(p)):  # go through each col
+                if p[i][j] == digit:  # row digit match
                     row_count += 1
-                if p[j][i] == digit: # col digit match
+                if p[j][i] == digit:  # col digit match
                     col_count += 1
             if row_count != 1 or col_count != 1:
                 return False

@@ -11,6 +11,7 @@
 
 # Hint - "int()" turns a string's element into a number
 
+
 def numbers_in_lists(string):
     maxNum = int(string[0])
     result = [maxNum]
@@ -30,11 +31,11 @@ def numbers_in_lists(string):
 # Test cases
 
 string = '543987'
-result = [5,[4,3],9,[8,7]]
+result = [5, [4, 3], 9, [8, 7]]
 print(repr(string), numbers_in_lists(string) == result)
 
 string = '987654321'
-result = [9,[8,7,6,5,4,3,2,1]]
+result = [9, [8, 7, 6, 5, 4, 3, 2, 1]]
 print(repr(string), numbers_in_lists(string) == result)
 
 string = '455532123266'
