@@ -18,6 +18,6 @@ The notebook files (.pynb) with numbers are ordered introductory materials for P
 
 The __Udacity-CS101__ folder contains nontrivial solutions for problems in the MOOC [Introduction to Computer Science](https://www.udacity.com/course/intro-to-computer-science--cs101). This course is a good starter point for people with no or little previous coding experience. It is taught all in Python.
 
-The __Machine-Learning__ folder contains the classical machine learning examples realized in Python language.
+The __Machine-Learning__ folder contains the classical machine learning examples and demos realized in Python and PySpark language.
 
 I will add more contents in the future depends on needs and mood.
