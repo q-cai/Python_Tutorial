@@ -18,6 +18,8 @@ The notebook files (.pynb) with numbers are ordered introductory materials for P
 
 The __Udacity-CS101__ folder contains nontrivial solutions for problems in the MOOC [Introduction to Computer Science](https://www.udacity.com/course/intro-to-computer-science--cs101). This course is a good starter point for people with no or little previous coding experience. It is taught all in Python.
 
-The __Machine-Learning__ folder contains the classical machine learning examples and demos realized in Python and PySpark language.
+The __Coursera-Course-1__ folder contains solutions for the Coursera course [Introduction to Data Science in Python](https://www.coursera.org/learn/python-data-analysis/). It is the first of the five courses series in [Applied Data Science with Specialization](https://www.coursera.org/specializations/data-science-python). I will upload solutions for the rest courses later.
+
+The __Machine-Learning__ folder contains the classical machine learning examples and demos realized in Python and PySpark language. The __Demos__ folder contains my work in IBM.
 
 I will add more contents in the future depends on needs and mood.
