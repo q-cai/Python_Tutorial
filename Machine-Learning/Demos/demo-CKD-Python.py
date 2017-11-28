@@ -46,9 +46,9 @@ sqlContext = SQLContext(sc)
 # In[2]:
 
 # Defining data mart credentials
-user = "rebtveec"
-password = "A2jtIvJnDEya"
-jdbcURL = "jdbc:db2://datamart-ds-db-1.dev1.whclsf1.watson-health.net:50443/DM3"
+user = ""
+password = ""
+jdbcURL = ""
 table = "TEST8"
 prop = {"user": user, "password": password,
         "driver": "com.ibm.db2.jcc.DB2Driver", "sslConnection": "true"}

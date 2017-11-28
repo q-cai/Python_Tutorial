@@ -45,9 +45,9 @@ sqlContext = SQLContext(sc)
 # df0 = rdd.filter(lambda line : line != header).toDF(header)
 # df0.printSchema()
 
-user = "dvnbkwjk"
-password = "bIj1aX39n8eL"
-jdbcURL = "jdbc:db2://datamart-ds-db-2.dev1.whclsf1.watson-health.net:50443/DM6"
+user = ""
+password = ""
+jdbcURL = ""
 table = "TEST9"
 prop = {"user": user, "password": password,
         "driver": "com.ibm.db2.jcc.DB2Driver", "sslConnection": "true"}
