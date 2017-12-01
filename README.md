@@ -20,6 +20,8 @@ The __Udacity-CS101__ folder contains nontrivial solutions for problems in the M
 
 The __Coursera-Course-1__ folder contains solutions for the Coursera course [Introduction to Data Science in Python](https://www.coursera.org/learn/python-data-analysis/). It is the first of the five courses series in [Applied Data Science with Specialization](https://www.coursera.org/specializations/data-science-python). I will upload solutions for the rest courses later.
 
-The __Machine-Learning__ folder contains the classical machine learning examples and demos realized in Python and PySpark language. The __Demos__ folder contains my work in IBM.
+The __Machine-Learning__ folder contains the classical machine learning examples and demos realized in Python. The __Demos__ subfolder contains examples on Python and PySpark data analysis on public available data on UCI Machine Learning Repository.
+
+The __PySpark__ folder contains Spark related materials on cloud platform.
 
 I will add more contents in the future depends on needs and mood.
